@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100svh;
+    width: 100svw;
+    background-color: rgb(163, 199, 222);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding: 1rem;
+}
+
+.logo {
+    padding: 3rem;
+    font-size: 5rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    font-style: italic;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+label {
+    padding: 0.3rem;
+    margin: 0.3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+input {
+    color: black;
+}
+
+.link {
+    padding: 0.3rem;
+    margin: 1.3rem;
+    font-size: 1.3rem;
+    border: 0.2rem solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.link:hover {
+    background-color: white;
+    color: black;
+}

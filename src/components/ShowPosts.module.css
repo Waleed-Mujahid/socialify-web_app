@@ -1,0 +1,43 @@
+ul {
+    list-style-type: none
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-gap: 2rem;
+    justify-content: center;
+}
+
+.postBox {
+    max-width: 20rem;
+    list-style-type: none;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid gray;
+    border-radius: 20px;
+    background-color: #f5f8fa;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.postAuthor {
+    padding-left: 1rem;
+    font-weight: bold;
+    color: #252424;
+    text-align: left;
+}
+
+.postText {
+    color: #7a7777;
+    font-style: italic;
+}
+
+@media only screen and (max-width: 770px) {
+    .postBox {
+        max-width: 100%;
+        margin: 0 3;
+    }
+}

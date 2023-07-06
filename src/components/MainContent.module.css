@@ -1,0 +1,16 @@
+
+.blur {
+    filter: blur(3px);
+}
+.clear {
+    clear: both;
+}
+
+.newPostButton {
+    position: relative;
+    margin: 1rem;
+    z-index: 0;
+    float: left;
+    max-height: 4rem;
+}
+
