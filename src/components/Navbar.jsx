@@ -8,14 +8,14 @@ import classes from "./Navbar.module.css";
 
 const Navbar = ({ logOutHandler }) => {
   const data = React.useContext(AuthApi);
-  const [dropDown, setDropDown] = useState("Log in");
+  const dropDown = (! data.userName) ? "Log In" : "Log Out";
   const navigate = useNavigate ();
-
-  useEffect(() => {
-    if (data.userName != "") {
-      setDropDown("Log Out");
-    }
-  }, [data.userName]);
+  console.log(data.userName);
+  // useEffect(() => {
+  //   if (data.userName != "") {
+  //     setDropDown("Log Out");
+  //   }
+  // }, [data.userName]);
 
   function clickHandler() {
     const input = document.querySelector("input");
@@ -60,7 +60,7 @@ const Navbar = ({ logOutHandler }) => {
           <Link
             className={classes.elements}
             onClick={logOutHandler}
-            to="/login"
+            to={"/login"}
           >
             {dropDown}
           </Link>

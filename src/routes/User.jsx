@@ -7,23 +7,25 @@ import classes from "./User.module.css";
 
 export default function () {
   const { userName } = useParams();
-  const [flag, setFlag] = useState(false);
+  // const [flag, setFlag] = useState(false);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true); 
 
   const data = useContext(AuthApi);
   const posts = data.posts;
-
+  const flag = filteredPosts.length > 0;
 
   useEffect(() => {
-    const user = posts.find((post) => post.author === userName);
+    // const user = posts.find((post) => post.author === userName);
     setIsLoading(false);
 
-    if (user != undefined) {
-      setFlag(true);
+    // if (user != undefined) {
+      // setFlag(!!user);
+
       setFilteredPosts(posts.filter((post) => post.author === userName));
-    }
-  }, []);
+    // }
+  }, [userName]);
+
 
   return (
     <div className={classes.container}>
