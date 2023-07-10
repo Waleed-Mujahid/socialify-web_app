@@ -8,6 +8,7 @@ export default function Start() {
   const newPost2 = {author: "Ahmed", text: "Genius is one percent inspiration and ninety-nine percent perspiration."}
   const newPost3 = {author: "Ahmed", text: "You can fool all of the people some of the time, and some of the people all of the time, but you can't fool all of the people all of the time."}
 
+
   const [userName, setUserName] = useState("");
   const [posts, setPosts] = useState([newPost1, newPost2, newPost3]);
   const [newPostFlag, setNewPostFlag] = useState(false);
