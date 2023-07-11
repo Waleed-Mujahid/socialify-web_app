@@ -18,6 +18,8 @@ function Home() {
         <div className={`${classes.item} ${data.newPostFlag ? classes.blur : ""}`} > </div>
         <div className={`${classes.item}`} > 
           <Outlet />
+
+          
         </div>
         <div className={`${classes.item} ${data.newPostFlag ? classes.blur : ""}`} > </div>
       </div>

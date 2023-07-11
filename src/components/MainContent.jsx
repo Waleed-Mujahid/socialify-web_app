@@ -1,52 +1,41 @@
 import React from "react";
 import { useContext } from "react";
-import AddPosts from "./addPosts";
 import ShowPosts from "./ShowPosts";
 import AuthApi from "./AuthApi";
 import classes from "./MainContent.module.css";
+import { Outlet, Link } from "react-router-dom";
 
-export default function MainPage() {
-  const data = useContext(AuthApi) 
-  const userName= data.userName
-  const posts= data.posts;
-  const setPosts= data.setPosts;
-  const setNewPostFlag= data.setNewPostFlag;
-  const newPostFlag= data.newPostFlag;
+export default function MainContent() {
+  const data = useContext(AuthApi);
+  const posts = data.posts;
+  const setNewPostFlag = data.setNewPostFlag;
+  const newPostFlag = data.newPostFlag;
 
   function clickHandler() {
     setNewPostFlag(true);
   }
 
-  const addNewPost = (newPost) => {
-    setPosts([...posts, newPost]);
-  };
-
   return (
-    <div>
-        {!newPostFlag && (
-          <button
-            onClick={clickHandler}
-            className={`${classes.newPostButton} ${
-              !newPostFlag ? "" : classes.blur
-            }`}
-          >
-            Click here to add post
-          </button>
-        )}
+    <>
+      {!newPostFlag && (
+        <Link
+          to="/add-post"
+          onClick={clickHandler}
+          className={`${classes.newPostButton} ${
+            !newPostFlag ? "" : classes.blur
+          }`}
+        >
+          Click here to add post
+        </Link>
+      )}
 
-        <div className={classes.clear}></div>
+      <div className={classes.clear}></div>
 
-        {newPostFlag && (
-          <AddPosts
-            setFlag={setNewPostFlag}
-            userName={userName}
-            addPost={addNewPost}
-          />
-        )}
+      {newPostFlag && <Outlet />}
 
-        <div className={`${newPostFlag ? classes.blur : ""}`}>
-          <ShowPosts posts={posts} />
-        </div>
+      <div className={`${newPostFlag ? classes.blur : ""}`}>
+        <ShowPosts posts={posts} />
       </div>
+    </>
   );
 }

@@ -48,7 +48,3 @@ function Login({ setUser }) {
 }
 
 export default Login;
-
-export async function action({ request }) {
-  return redirect("/");
-}

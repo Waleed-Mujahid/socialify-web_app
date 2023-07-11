@@ -4,10 +4,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
 import Wrapper from "./components/Wrapper";
 import MainContent from "./components/MainContent";
-
+import AddPosts from "./components/AddPosts";
 import User from "./routes/User";
 import Home from "./routes/Home";
-import Login, { action as loginAction } from "./routes/Login";
+import Login from "./routes/Login";
 import Register, { action as RegisterAction } from "./routes/Register";
 
 const router = createBrowserRouter([
@@ -22,11 +22,17 @@ const router = createBrowserRouter([
           {
             path: "/",
             element: <MainContent />,
+            children: [
+              {
+                path: "/add-post",
+                element: <AddPosts />,
+              },
+            ],
           },
           {
             path: "/users/:userName",
             element: <User />,
-          }
+          },
         ],
       },
       {
@@ -48,3 +54,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+

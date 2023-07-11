@@ -11,7 +11,7 @@ export default function Start() {
 
   const [userName, setUserName] = useState("");
   const [posts, setPosts] = useState([newPost1, newPost2, newPost3]);
-  const [newPostFlag, setNewPostFlag] = useState(false);
+  const [newPostFlag, setNewPostFlag] = useState(window.location.pathname === "/add-post" ? true : false);
 
 
   return (
