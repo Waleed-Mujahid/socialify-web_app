@@ -18,10 +18,6 @@
     padding: 0.5rem;
 }
 
-.newPostButton:hover {
-    background-color: gray;
-}
-
 .emptySpaceNav {
     height: 4rem;
 }

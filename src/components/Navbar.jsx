@@ -7,14 +7,13 @@ import classes from "./Navbar.module.css";
 
 const Navbar = ({ logOutHandler }) => {
   const data = useContext(AuthApi);
-  const dropDown = !data.userName ? "Log In" : "Log Out";
+  const dropDown = !data.userName ? "Login" : "Log Out";
   const navigate = useNavigate();
 
 
   function clickHandler() {
     const input = document.querySelector("input");
     if (input.value != "") {
-      // const url = `/users/${input.value}`;
       const url = `/users/${input.value}`;
       input.value = "";
       navigate(url);
