@@ -17,7 +17,6 @@ export default function MainContent() {
 
   return (
     <>
-      <div class = {classes.emptySpaceNav}></div>
       {!newPostFlag && (
         <Link
           to="/add-post"
@@ -30,9 +29,9 @@ export default function MainContent() {
         </Link>
       )}
 
-      <div className={classes.clear}></div>
-
-      {newPostFlag && <Outlet />}
+      <div className={classes.newPost}>
+        {newPostFlag && <Outlet />}
+      </div>
 
       <div className={`${newPostFlag ? classes.blur : ""}`}>
         <ShowPosts posts={posts} />

@@ -1,7 +1,6 @@
 import React from "react";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useContext, useRef } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import AuthApi from "./AuthApi";
 import classes from "./Navbar.module.css";
 
@@ -9,13 +8,12 @@ const Navbar = ({ logOutHandler }) => {
   const data = useContext(AuthApi);
   const dropDown = !data.userName ? "Login" : "Log Out";
   const navigate = useNavigate();
-
+  const inputRef = useRef();
 
   function clickHandler() {
-    const input = document.querySelector("input");
-    if (input.value != "") {
-      const url = `/users/${input.value}`;
-      input.value = "";
+    if (inputRef.current.value != "") {
+      const url = `/users/${inputRef.current.value}`;
+      inputRef.current.value = "";
       navigate(url);
     }
   }
@@ -46,6 +44,7 @@ const Navbar = ({ logOutHandler }) => {
                 aria-label="Search"
                 aria-describedby="search-addon"
                 onKeyDown={handleKeyDown}
+                ref={inputRef}
               />
               <div>
                 <button onClick={clickHandler}>GO</button>

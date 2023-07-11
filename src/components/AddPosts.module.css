@@ -7,14 +7,17 @@
     overflow: hidden;
     min-height: 250px;
     max-width: 50%;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 .buttons {
     display: flex;
     flex-direction: row;
     margin: 1% 0;
+    justify-content: space-evenly;
 }
 
 textarea {

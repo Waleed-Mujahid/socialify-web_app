@@ -7,7 +7,7 @@ import MainContent from "./components/MainContent";
 import AddPosts from "./components/AddPosts";
 import User from "./routes/User";
 import Home from "./routes/Home";
-import Login from "./routes/Login";
+import Login  from "./routes/Login";
 import Register, { action as RegisterAction } from "./routes/Register";
 
 const router = createBrowserRouter([

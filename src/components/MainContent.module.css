@@ -2,9 +2,7 @@
 .blur {
     filter: blur(3px);
 }
-.clear {
-    clear: both;
-}
+
 
 .newPostButton {
     position: relative;
@@ -16,9 +14,5 @@
     color: white;
     background-color: #333333;
     padding: 0.5rem;
+    width: 10rem;
 }
-
-.emptySpaceNav {
-    height: 4rem;
-}
-

@@ -4,7 +4,6 @@ import { useContext, useRef } from "react";
 import AuthApi from "./AuthApi";
 import { useNavigate } from "react-router-dom";
 
-
 export default function addPosts() {
   const data = useContext(AuthApi);
   const formRef = useRef(null);
@@ -36,7 +35,13 @@ export default function addPosts() {
   document.addEventListener("mousedown", clickOutHandler);
 
   return (
-      <form className={classes.container} onSubmit={submitHandler} method="post" ref={formRef}>
+    <>
+      <form
+        className={classes.container}
+        onSubmit={submitHandler}
+        method="post"
+        ref={formRef}
+      >
         <label className={classes.label} htmlFor="text">
           What is on your mind {user} ?
         </label>
@@ -46,10 +51,11 @@ export default function addPosts() {
           <button type="submit" className={classes.post}>
             Post
           </button>
-          <button type="submit" className={classes.post} onClick={cancelHandler} >
+          <button className={classes.post} onClick={cancelHandler}>
             Cancel
           </button>
         </div>
       </form>
+    </>
   );
 }
