@@ -17,6 +17,7 @@ export default function MainContent() {
 
   return (
     <>
+      <div class = {classes.emptySpaceNav}></div>
       {!newPostFlag && (
         <Link
           to="/add-post"
