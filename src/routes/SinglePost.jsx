@@ -22,7 +22,7 @@ export async function loader({ params }) {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log(errFor);
+    console.log(error);
   }
   return null;
 }

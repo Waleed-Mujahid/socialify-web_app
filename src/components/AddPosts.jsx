@@ -1,10 +1,9 @@
-import React from "react";
 import classes from "./addPosts.module.css";
 import { useContext, useRef } from "react";
 import AuthApi from "./AuthApi";
 import { useNavigate } from "react-router-dom";
 
-export default function addPosts() {
+export default function AddPosts() {
   const data = useContext(AuthApi);
   const formRef = useRef(null);
   const navigate = useNavigate();
