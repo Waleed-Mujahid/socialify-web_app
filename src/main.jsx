@@ -11,6 +11,7 @@ import Login  from "./routes/Login";
 import Register, { action as RegisterAction } from "./routes/Register";
 import Posts, {loader as postsLoader} from "./routes/Posts";
 import SinglePost, {loader as singlePostLoader} from "./routes/SinglePost";
+import Error from "./routes/Error";
 
 const router = createBrowserRouter([
   {
@@ -45,16 +46,15 @@ const router = createBrowserRouter([
             element: <SinglePost />,
             loader: singlePostLoader,
           },
-          // {
-          //   path: "/posts/:postId",
-          //   element: <SinglePost />,
-          //   loader: singlePostLoader,
-          // }
         ],
       },
       {
-        path: "login",
+        path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/*",
+        element: <Error />,
       },
     ],
   },
