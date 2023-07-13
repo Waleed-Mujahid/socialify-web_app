@@ -24,6 +24,13 @@ ul {
     gap: 8px;
 }
 
+.postBox:hover {
+    /* Styles for focused post */
+    border: 1px solid #ff0000; /* Red border */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    z-index: 1; /* Ensure the focused post is above other content */
+  }
+
 .postAuthor {
     padding-left: 1rem;
     font-weight: bold;

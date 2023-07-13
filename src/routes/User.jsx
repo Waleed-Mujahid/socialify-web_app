@@ -5,7 +5,7 @@ import AuthApi from "../components/AuthApi";
 import ShowPosts from "../components/ShowPosts";
 import classes from "./User.module.css";
 
-const Loader = () => {
+export const Loader = () => {
   return (
     <div className={classes.heading}>
       <h2>Loading...</h2>

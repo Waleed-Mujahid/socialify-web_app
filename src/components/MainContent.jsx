@@ -18,20 +18,19 @@ export default function MainContent() {
   return (
     <>
       {!newPostFlag && (
-        <Link
-          to="/add-post"
-          onClick={clickHandler}
-          className={`${classes.newPostButton} ${
-            !newPostFlag ? "" : classes.blur
-          }`}
-        >
-          Click here to add post
-        </Link>
+        <div className={classes.container}>
+          <Link
+            to="/add-post"
+            onClick={clickHandler}
+            className={classes.newPostButton}
+          >
+            Click here to add post
+          </Link>
+          <Link className={classes.newPostButton} to='/posts' > Fetch posts from Server </Link>
+        </div>
       )}
 
-      <div className={classes.newPost}>
-        {newPostFlag && <Outlet />}
-      </div>
+      <div className={classes.newPost}>{newPostFlag && <Outlet />}</div>
 
       <div className={`${newPostFlag ? classes.blur : ""}`}>
         <ShowPosts posts={posts} />

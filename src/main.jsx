@@ -9,6 +9,8 @@ import User from "./routes/User";
 import Home from "./routes/Home";
 import Login  from "./routes/Login";
 import Register, { action as RegisterAction } from "./routes/Register";
+import Posts, {loader as postsLoader} from "./routes/Posts";
+import SinglePost, {loader as singlePostLoader} from "./routes/SinglePost";
 
 const router = createBrowserRouter([
   {
@@ -33,12 +35,26 @@ const router = createBrowserRouter([
             path: "/users/:userName",
             element: <User />,
           },
+          {
+            path: "/posts",
+            element: <Posts />,
+            loader: postsLoader,
+          },
+          {
+            path: "/posts/:postId",
+            element: <SinglePost />,
+            loader: singlePostLoader,
+          },
+          // {
+          //   path: "/posts/:postId",
+          //   element: <SinglePost />,
+          //   loader: singlePostLoader,
+          // }
         ],
       },
       {
         path: "login",
         element: <Login />,
-        // action: loginAction,
       },
     ],
   },

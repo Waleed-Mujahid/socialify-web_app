@@ -14,5 +14,15 @@
     color: white;
     background-color: #333333;
     padding: 0.5rem;
-    width: 10rem;
+    width: fit-content;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
 }

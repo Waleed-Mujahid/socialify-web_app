@@ -10,14 +10,16 @@
 }
 
 .container {
-  background-color: #e4dcdc;
+  color: black;
   display: flex;
   flex-direction: column;
   float: left;
   height: 100%;
+  margin-top: 4.5rem;
+  overflow: auto
 }
 
 .emptySpaceNav {
-  height: 6rem;
-  background-color: #e4dcdc;
+  height: 5rem;
+  width: 100%;
 }

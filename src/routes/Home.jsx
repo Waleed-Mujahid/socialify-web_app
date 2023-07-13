@@ -14,7 +14,6 @@ function Home() {
   return (
     <div className={classes.home}>
       <Navbar logOutHandler = {clickHandler}/>
-      <div className = {classes.emptySpaceNav}></div>
       
       {/*main content goes here*/}
       <div className={classes.container}>
