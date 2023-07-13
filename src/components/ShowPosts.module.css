@@ -41,6 +41,7 @@ ul {
 .postText {
     color: #7a7777;
     font-style: italic;
+    font-weight: normal ;
 }
 
 @media only screen and (max-width: 770px) {

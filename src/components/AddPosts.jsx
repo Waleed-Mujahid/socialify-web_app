@@ -10,12 +10,29 @@ export default function addPosts() {
   const navigate = useNavigate();
   let user = data.userName === "" ? "Anonymous" : data.userName;
 
-  function submitHandler(event) {
+  async function submitHandler(event) {
     event.preventDefault();
     const text = event.target.text.value;
     const newPost = { author: user, text: text };
     data.setPosts([...data.posts, newPost]);
     data.setNewPostFlag(false);
+
+    // code for posting to the server
+    try {
+      const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        body: JSON.stringify({
+          title: user,
+          body: text,
+          userId: 1,
+        }),
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+      });
+      const json = await response.json();
+      console.log(json);
+    } catch (error) {
+      console.log("Error: " + error);
+    }
     navigate("/");
   }
 
